@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GangBeast Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
+background:#050505;
+overflow-x:hidden;
+color:#00ff88;
+}
+
+/* Matrix Background */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #00ff88;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+text-shadow:0 0 20px #00ff88;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:#00ff88;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:white;
+text-shadow:0 0 15px #00ff88;
+}
+
+.search{
+padding:10px;
+background:black;
+border:1px solid #00ff88;
+color:#00ff88;
+}
+
+/* Hero */
+
+.hero{
+
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+text-shadow:0 0 25px #00ff88;
+
+}
+
+.hero p{
+
+margin:20px;
+font-size:22px;
+color:#9fffca;
+
+}
+
+.btn{
+
+padding:18px 45px;
+background:#00ff88;
+color:black;
+font-weight:bold;
+border:none;
+cursor:pointer;
+font-size:18px;
+transition:.4s;
+box-shadow:0 0 20px #00ff88;
+
+}
+
+.btn:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 50px #00ff88;
+
+}
+
+/* Section */
+
+section{
+
+padding:80px 8%;
+
+}
+
+.title{
+
+font-size:40px;
+margin-bottom:40px;
+text-align:center;
+text-shadow:0 0 15px #00ff88;
+
+}
+
+/* Cards */
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:#111;
+border:1px solid #00ff88;
+padding:20px;
+border-radius:12px;
+transition:.4s;
+box-shadow:0 0 15px #00ff44;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+box-shadow:0 0 40px #00ff88;
+
+}
+
+.card img{
+
+width:100%;
+border-radius:10px;
+
+}
+
+.card h2{
+
+margin:15px 0;
+
+}
+
+.price{
+
+font-size:24px;
+margin:10px 0;
+color:#7dffb5;
+
+}
+
+.buy{
+
+width:100%;
+padding:14px;
+background:#00ff88;
+color:black;
+border:none;
+font-weight:bold;
+cursor:pointer;
+font-size:18px;
+
+}
+
+.buy:hover{
+
+background:white;
+
+}
+
+/* Footer */
+
+footer{
+
+padding:40px;
+text-align:center;
+border-top:1px solid #00ff88;
+background:#050505;
+
+}
+
+.glow{
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px #00ff88;
+}
+
+to{
+text-shadow:0 0 30px #00ff88;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<nav>
+
+<div class="logo glow">GangBeast Store</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#">Games</a></li>
+<li><a href="#">Top Sellers</a></li>
+<li><a href="#">New Releases</a></li>
+<li><a href="#">Support</a></li>
+
+</ul>
+
+<input class="search" placeholder="Search Games...">
+
+</nav>
+
+<div class="hero">
+
+<div>
+
+<h1 class="glow">ENTER THE HACKER MARKET</h1>
+
+<p>Buy Premium Games Securely With Cyber Protection.</p>
+
+<button class="btn">Browse Games</button>
+
+</div>
+
+</div>
+
+<section>
+
+<h1 class="title">Featured Games</h1>
+
+<div class="grid">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=700" alt="Game">
+
+<h2>Gang Beasts</h2>
+
+<p>Ultimate multiplayer party game.</p>
+
+<div class="price">$14.99</div>
+
+<button class="buy">BUY NOW</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=700" alt="Game">
+
+<h2>Cyber Arena</h2>
+
+<p>Fight inside the digital world.</p>
+
+<div class="price">$29.99</div>
+
+<button class="buy">BUY NOW</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700" alt="Game">
+
+<h2>Dark Protocol</h2>
+
+<p>Elite hacker action adventure.</p>
+
+<div class="price">$39.99</div>
+
+<button class="buy">BUY NOW</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 GangBeast Store | Hacker Edition
+
+</footer>
+
+<script>
+
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
+
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+
+const letters="01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%^&*";
+
+const fontSize=16;
+
+const columns=canvas.width/fontSize;
+
+const drops=[];
+
+for(let i=0;i<columns;i++)
+drops[i]=1;
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff88";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+const text=letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+
+}
+
+}
+
+setInterval(draw,33);
+
+window.onresize=()=>{
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+}
+
+</script>
+<section id="trending">
+
+<h1 class="title">🔥 Trending Games</h1>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://picsum.photos/400/220?random=11">
+<h2>Neon Strike</h2>
+<p>Fast-paced cyber shooter.</p>
+<div class="price">$24.99</div>
+<button class="buy">BUY NOW</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/220?random=12">
+<h2>Pixel Legends</h2>
+<p>Adventure RPG.</p>
+<div class="price">$19.99</div>
+<button class="buy">BUY NOW</button>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/220?random=13">
+<h2>Cyber Drift</h2>
+<p>High-speed racing.</p>
+<div class="price">$29.99</div>
+<button class="buy">BUY NOW</button>
+</div>
+
+</div>
+
+</section>
+<section id="features">
+
+<h1 class="title">Features</h1>
+
+<div class="grid">
+
+<div class="card">
+<h2>⚡ Instant Download</h2>
+<p>Purchase games and download immediately.</p>
+</div>
+
+<div class="card">
+<h2>🔒 Secure Payments</h2>
+<p>Protected checkout system.</p>
+</div>
+
+<div class="card">
+<h2>🎮 Multiplayer Ready</h2>
+<p>Play online with friends.</p>
+</div>
+
+<div class="card">
+<h2>💎 Exclusive Discounts</h2>
+<p>Weekly sales up to 80% off.</p>
+</div>
+
+</div>
+
+</section>
+<div id="signin" style="display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:#111;
+padding:30px;
+border:2px solid #00ff88;
+border-radius:12px;
+z-index:999;">
+
+<h2>Sign In</h2>
+
+<input id="user" placeholder="Username"
+style="width:100%;padding:10px;margin:10px 0;">
+
+<input id="pass" type="password"
+placeholder="Password"
+style="width:100%;padding:10px;margin:10px 0;">
+
+<button class="btn" onclick="login()">Login</button>
+
+<button class="btn"
+onclick="closeLogin()"
+style="margin-top:10px;background:red;color:white;">
+Close
+</button>
+
+</div>
+</body>
+</html>
